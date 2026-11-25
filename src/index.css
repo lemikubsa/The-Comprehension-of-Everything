@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   THEME VARIABLES 
+   ========================================================================== */
+:root,
+:root[data-theme="light"] {
+  --bg-primary: #f7f4ee;
+  --bg-surface: rgba(255, 253, 249, 0.88);
+  --bg-elevated: #efeae0;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --accent-gold: #9a642c;
+  --accent-gold-bright: #7c4d1e;
+  --border-subtle: rgba(154, 100, 44, 0.22);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #090c12;
+  --bg-surface: rgba(15, 19, 28, 0.78);
+  --bg-elevated: #161b26;
+  --text-primary: #ece8e1;
+  --text-secondary: #a8a29e;
+  --accent-gold: #d19a66;
+  --accent-gold-bright: #e5c07b;
+  --border-subtle: rgba(209, 154, 102, 0.18);
+  color-scheme: dark;
+}
+
+:root[data-theme="sepia"] {
+  --bg-primary: #1c1712;
+  --bg-surface: rgba(38, 31, 24, 0.85);
+  --bg-elevated: #2b231b;
+  --text-primary: #f2e6cf;
+  --text-secondary: #c4b59b;
+  --accent-gold: #d9a05b;
+  --accent-gold-bright: #f0c284;
+  --border-subtle: rgba(217, 160, 91, 0.25);
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: rgba(209, 154, 102, 0.3); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent-gold); }
+}
+
+@layer components {
+  .athenaeum-glass {
+    background: var(--bg-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+
+  .athenaeum-elevated {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .ambient-glow {
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(209, 154, 102, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 82% 85%, rgba(209, 154, 102, 0.06) 0%, transparent 50%);
+  }
+
+  /* Reader */
+  .essay-prose p {
+    margin-bottom: 1.55em;
+    line-height: 1.85;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .essay-prose > p:first-of-type::first-letter {
+    font-family: "Cinzel", serif;
+    font-size: 3.3em;
+    float: left;
+    line-height: 0.85;
+    margin-right: 0.18em;
+    margin-top: 0.05em;
+    color: var(--accent-gold);
+    font-weight: 700;
+  }
+  .essay-prose h2 {
+    font-family: "Cinzel", serif;
+    font-size: 1.45em;
+    font-weight: 600;
+    color: var(--accent-gold-bright);
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    letter-spacing: 0.02em;
+  }
+  .essay-prose blockquote {
+    border-left: 2px solid var(--accent-gold);
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    margin: 1.75em 0;
+    font-style: italic;
+    color: var(--accent-gold-bright);
+    background: rgba(209, 154, 102, 0.04);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .essay-prose code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85em;
+    padding: 0.15em 0.4em;
+    border-radius: 0.25rem;
+    background: rgba(209, 154, 102, 0.12);
+    color: var(--accent-gold-bright);
+  }
+}
