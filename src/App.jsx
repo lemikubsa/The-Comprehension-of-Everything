@@ -303,26 +303,29 @@ function Header({ page, navigate, theme, setTheme }) {
 
   return (
     <header className="sticky top-0 z-40 w-full athenaeum-glass border-b border-theme">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-        <button onClick={() => navigate("home")} className="flex items-center space-x-3.5 text-left group focus:outline-none">
-          <div className="relative w-11 h-11 rounded-xl athenaeum-elevated flex items-center justify-center shadow-lg group-hover:border-gold-400 transition-all">
-            <svg className="w-9 h-9" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Personal Monogram">
-              <rect x="2" y="2" width="40" height="40" rx="8" stroke="currentColor" className="text-theme-gold" strokeOpacity="0.45" strokeWidth="1.2" />
-              <path d="M22 6V38" stroke="currentColor" className="text-theme-gold" strokeOpacity="0.25" strokeWidth="1" />
-              {/* EDITABLE MONOGRAM: replace A and B with your initials */}
-              <text x="12.5" y="27" textAnchor="middle" fill="currentColor" className="text-theme-gold-bright font-display font-bold" fontSize="14">L</text>
-              <text x="31.5" y="27" textAnchor="middle" fill="currentColor" className="text-theme-gold font-display font-semibold" fontSize="14">K</text>
-            </svg>
-          </div>
-          <div>
-            <span className="block font-display text-base sm:text-lg md:text-xl font-bold tracking-wider text-theme-primary group-hover:text-theme-gold-bright transition-colors">
-              THE COMPREHENSION OF EVERYTHING
-            </span>
-            <span className="block font-sans text-[10px] uppercase tracking-[0.22em] text-theme-gold font-medium">
-              Inquiry Across Knowledge &amp; Computation
-            </span>
-          </div>
-        </button>
+     <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-[5rem] py-2 flex items-center justify-between gap-2 sm:gap-4">
+        <button
+  onClick={() => navigate("home")}
+  className="flex items-center gap-2.5 sm:gap-3.5 text-left group focus:outline-none min-w-0 flex-1"
+>
+  <div className="relative shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl athenaeum-elevated flex items-center justify-center shadow-lg group-hover:border-gold-400 transition-all">
+    <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Personal Monogram">
+      <rect x="2" y="2" width="40" height="40" rx="8" stroke="currentColor" className="text-theme-gold" strokeOpacity="0.45" strokeWidth="1.2" />
+      <path d="M22 6V38" stroke="currentColor" className="text-theme-gold" strokeOpacity="0.25" strokeWidth="1" />
+      <text x="12.5" y="27" textAnchor="middle" fill="currentColor" className="text-theme-gold-bright font-display font-bold" fontSize="14">L</text>
+      <text x="31.5" y="27" textAnchor="middle" fill="currentColor" className="text-theme-gold font-display font-semibold" fontSize="14">K</text>
+    </svg>
+  </div>
+
+  <div className="min-w-0 flex-1">
+    <span className="block font-display text-[13px] leading-tight sm:text-lg md:text-xl font-bold tracking-wide sm:tracking-wider text-theme-primary group-hover:text-theme-gold-bright transition-colors">
+      THE COMPREHENSION OF EVERYTHING
+    </span>
+    <span className="block mt-0.5 font-sans text-[8px] leading-snug sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.22em] text-theme-gold font-medium">
+      Inquiry Across Knowledge &amp; Computation
+    </span>
+  </div>
+</button>
 
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 font-sans text-xs uppercase tracking-widest font-medium" aria-label="Primary Navigation">
           {NAV_ITEMS.map((item) => (
